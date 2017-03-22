@@ -2,9 +2,71 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="user-scalable=no,maximum-scale=1,width=device-width"/>
+    <title>个人简历</title>
+    <link rel="stylesheet" href="src/css/index.min.css">
 </head>
+<header>
+    <div class="topbar">
+        <a href="#about">关于我</a>
+        <a href="#skill">技能</a>
+        <a class="blank" href="#"></a>
+        <a href="#demo">项目</a>
+        <a href="#">联络</a>
+    </div>
+    <div id="logo">
+        <h1 class="f_logo">练嘉发</h1>
+        <h2 class="f_logo">前端开发</h2>
+    </div>
+</header>
 <body>
-    <h1>hello world</h1>
+<section id="about">
+    <div class="container">
+        <h1>关于我</h1>
+        <p>技能</p>
+        <div class="skill">
+            <div class="list">
+                <p data-type="0">HTML&CSS</p>
+                <p data-type="1">JavaScript&jQuery</p>
+                <p data-type="2">框架&工具</p>
+                <p data-type="3">后端语言</p>
+            </div>
+            <div id="content">
+                <p class="active">遵循 W3C 规范，写出规范化、语义化的代码，熟悉圣杯布局和双飞翼等常见布局。熟悉
+                    CSS3，熟悉盒模型、浮动，定位，BFC 等概念。了解响应式和 flex 布局</p>
+                <p>熟悉原生 JS 和 jQuery,利用 JS 和 jQery 实现常见效果，能够不依赖库手写 tab 切换、轮播、
+                    瀑布流布局、懒加载，stickUp 等效果。掌握事件模型、DOM 操作、ajax、jsonp、闭包、
+                    原型链、面向对象、封装等知识</p>
+                <p>熟练使用cnpm、Git等命令行等开发工具熟悉 webpack、gulp 等前端构建工具，打包代码和实现代码的模块化
+                    了解 react.js,vue.js,angular和bootStrap的基本用法，对 vue 和 bootStrap 有一定的使用经验，能够用
+                    bootstap 搭建网站</p>
+                <p>了解php,可以和后端约定接口,能写一定程度的mysql语句，</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="demo">
+    <div class="container">
+        <h1>作品</h1>
+    </div>
+</section>
+<section id="contact">
+    <div class="container">
+        <h1>联系我</h1>
+    </div>
+</section>
 </body>
+<script src="src/js/jquery-1.8.3.min.js"></script>
+<!--<script src="src/js/jquery.fullPage.min.js"></script>-->
+<script>
+    $(function(){
+        $('.list').on('click',function(e){
+            if(e.target.nodeName.toLowerCase()==='p'){
+                var item=$(e.target).attr('data-type');
+                $('#content p').removeClass();
+                $('#content p').eq(item).addClass('active');
+            }
+        });
+    });
+</script>
 </html>
